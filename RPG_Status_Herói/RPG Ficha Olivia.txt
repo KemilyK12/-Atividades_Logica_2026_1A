@@ -1,0 +1,30 @@
+﻿string nomeHeroi = "Olivia Willows";
+int idade = 25;
+Console.WriteLine($"Nome: {nomeHeroi}");
+Console.WriteLine($"Idade : {idade}" );
+int ataqueBase = 50;
+int bonusArma = 25;
+int ataqueTotal = ataqueBase  + bonusArma;
+Console.WriteLine($"Ataque Total: {ataqueTotal}");
+Double VidaInimigo = 200;
+double  VidaRestante = VidaInimigo -  ataqueTotal;
+Console.WriteLine($"Vida do Inimigo: {VidaInimigo}");
+Console.WriteLine($"Vida Restate do Inimigo após ser após o Ataque: {VidaRestante}");
+float Moedas = 30;
+var MoedascomBônus = Moedas * 2;
+Console.WriteLine($"Total de Moedas com Bônus: {MoedascomBônus}");
+long XPTotal = 2000000;
+long XPMedia = XPTotal / 2;
+Console.WriteLine($"Média de XP: {XPMedia}");
+bool entendiMateria = true;
+Console.WriteLine($"entendi a Materia: {entendiMateria}";
+Console.WriteLine("===== ARQUIVO: PROTOCOLO_CYBERPUNK.EXE =====\n");
+
+Console.WriteLine($"A mercenária {nomeHeroi} acessou a rede interna no setor, que era algo impossível);
+Console.WriteLine($"Usando uma arma de {ataqueBase} de dano mais uma magia misteriosa com {bonusArma}, ela deu um dano de {ataqueTotal});
+Console.WriteLine($"sua potência de invasão atingiu o inimigo com {VidaInimigo} com o seu ataque, ele ficou {VidaRestante} de vida");
+Console.WriteLine($"Ela ganha {Moedas} e com os bônus: {MoedascomBônus}."
+
+Console.WriteLine("A mercenário desaparece nas sombras da metrópole tecnológica.");
+Console.WriteLine("A rede agora pertence a ele...");
+Console.ReadLine();

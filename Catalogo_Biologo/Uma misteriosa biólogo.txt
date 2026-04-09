@@ -1,0 +1,42 @@
+﻿Console.WriteLine("\n---Catalogo sobre protozoário.---");
+Console.WriteLine("Digete o número correspondente com o protozoário desejado");
+Console.WriteLine("1 - Euglenófitas");
+Console.WriteLine("2 - Clorófitas");
+Console.WriteLine("3 - Bacilariófitas");
+Console.WriteLine("4 - Rodófitas");
+Console.WriteLine("5 - Pirrófitas");
+Console.WriteLine("6 - Amebas");
+Console.WriteLine("7 - Toxoplasma");
+Console.WriteLine("8 - Filariose");
+Console.WriteLine("9 - tripomastígotas");
+string opcao = Console.ReadLine();
+switch (opcao)
+    {
+    case "1":
+        Console.WriteLine("Você está catalogando na Euglenófitas");
+        break;
+        case "2":
+        Console.WriteLine("Você está catalogando na Clofófitas");
+        break;
+        case "3":
+        Console.WriteLine("Você está catalogando na Bacilariófitas");
+        break;
+        case "4":
+        Console.WriteLine("Você está catalogando na Rodófitas");
+        break;
+        case "5":
+        Console.WriteLine("Você está catalogando na Pirrófitas");
+        break;
+        case "6":
+        Console.WriteLine("Você está catalogando na Amebas");
+        break;
+        case "7":
+        Console.WriteLine("Você está catalogando na Toxoplasma");
+        break;
+        case "8":
+        Console.WriteLine("Você está catalogando na Filariose");
+        break;
+        case "9":
+        Console.WriteLine("Você está catalogando na Tripomastígotas");
+        break;
+}

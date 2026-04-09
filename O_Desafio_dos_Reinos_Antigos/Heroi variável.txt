@@ -1,0 +1,122 @@
+﻿Console.WriteLine("Escolha sua classe:");
+Console.WriteLine("1 - Mago");
+Console.WriteLine("2 - Clérigo");
+Console.WriteLine("3 - Guerreiro");
+Console.WriteLine("4 - Druida");
+Console.WriteLine("5 - Anão");
+Console.WriteLine("6 - Elfo");
+Console.WriteLine("7 - Troll");
+string opçaoclasse = Console.ReadLine();
+//captura a opção digitada pelo úsuario
+switch (opçaoclasse)
+{
+    case "1":
+        Console.WriteLine("Você escolheu o: Mago.");
+        opçaoclasse = "Mago";
+        break;
+        case "2":
+        Console.WriteLine("Você escolheu o: Clérigo.");
+        opçaoclasse = "Clérigo";
+        break;
+    case "3":
+        Console.WriteLine("Você escolheu o: Guerreiro.");
+        opçaoclasse = "Guerreiro";
+        break;
+    case "4":
+        Console.WriteLine("Você escolheu o: Druida.");
+        opçaoclasse = "Druida";
+        break;
+    case "5":
+        Console.WriteLine("Você escolheu o: Anâo.");
+        opçaoclasse = "Anão";
+        break;
+    case "6":
+        Console.WriteLine("Você escolheu o: Elfo.");
+        opçaoclasse = "Elfo";
+        break;
+    case "7":
+        Console.WriteLine("Você escolheu o: Troll.");
+        opçaoclasse = "Troll";
+        break;
+}
+Console.WriteLine("Escreva o nome do seu personagem:");
+string nome = Console.ReadLine();
+Console.Write("Qual o seu nível? (Inteiro): ");
+int nivel = int.Parse(Console.ReadLine());
+
+Console.Write("Quanto de HP você tem? (Decimal): ");
+double hp = double.Parse(Console.ReadLine());
+
+Console.Write("Quanto de Mana você tem? (Inteiro): ");
+int mana = int.Parse(Console.ReadLine());
+
+Console.Write("Quantas moedas de ouro você carrega? (Decimal): ");
+double ouro = double.Parse(Console.ReadLine());
+
+// --- APLICAÇÃO DAS REGRAS (TESTES LÓGICOS) ---
+
+// 1. Regra da Raça Inimiga (!= e !)
+if (opçaoclasse != "Troll" && !(nivel < 5))
+{
+    Console.WriteLine($"\n✅ {nome}, a guilda permitiu sua entrada para o teste!");
+
+    // 2. Cálculo do Poder de Combate (+, -, *, /)
+    double poderBase = (nivel * 10) + (hp / 2) - 5;
+    Console.WriteLine($"📊 Seu Poder Base de Combate é: {poderBase}");
+
+    // 3. Regra do Dano Crítico (% e ==)
+    if (poderBase % 2 == 0)
+    {
+        Console.WriteLine("⚔️✨ CRÍTICO! Seu poder é equilibrado e você recebeu um bônus de dano!");
+    }
+
+    bool podeAtacar = false;
+
+    // 4. Regra da Magia (||, &&, >=, <=)
+    if (opçaoclasse == "Mago" || opçaoclasse == "Druida" || opçaoclasse == "Clérigo")
+    {
+        if (mana >= 30 && nivel <= 100)
+        {
+            podeAtacar = true;
+        }
+        else
+        {
+            Console.WriteLine("🪵 Mana insuficiente ou nível instável! Seu cajado falhou.");
+        }
+    }
+    // 5. Regra do Ataque Físico (>, <, &&)
+    else if (opçaoclasse == "Guerreiro" || opçaoclasse == "Anão" || opçaoclasse == "Elfo")
+    {
+        if (hp > 20 && poderBase > 50)
+        {
+            podeAtacar = true;
+        }
+    }
+
+    // 6. Resultado Final ou Suborno
+    if (podeAtacar)
+    {
+        Console.WriteLine($"\n🔥 VITÓRIA! {nome} derrotou o Dragão Vermelho!");
+    }
+    else
+    {
+        Console.WriteLine("\n⚠️ O combate direto é impossível...");
+
+        // Suborno (||)
+        if (ouro > 1000 || opçaoclasse == "Anão")
+        {
+            Console.WriteLine("💰 Você usou sua lábia (ou dinheiro) e o Dragão te deixou passar!");
+        }
+        else
+        {
+            Console.WriteLine("💀 Sem ataque e sem dinheiro... Você virou churrasco de dragão!");
+        }
+    }
+}
+else
+{
+    Console.WriteLine("\n🚫 ACESSO NEGADO! A guilda não treina Trolls ou novatos (nível < 5).");
+}
+
+
+

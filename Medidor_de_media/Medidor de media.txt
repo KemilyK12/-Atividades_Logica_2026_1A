@@ -1,0 +1,6 @@
+﻿A construção começou em 09:31...
+1>------ Compilação iniciada: Projeto: Medidor de nota, Configuração: Debug Any CPU ------
+1>  Ignorando analisadores para acelerar a construção. Você pode executar o comando 'Build' ou 'Rebuild' para executar os analisadores.
+1>  Medidor de nota -> C:\Users\DEV\source\repos\Medidor de nota\Medidor de nota\bin\Debug\net10.0\Medidor de nota.dll
+========== Compilação: 1 bem-sucedida, 0 com falha, 0 atualizada, 0 ignorada ==========
+========== Compilação concluído às 09:31 e levou 00,452 segundos ==========

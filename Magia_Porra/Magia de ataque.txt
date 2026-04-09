@@ -1,0 +1,54 @@
+﻿Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+
+{
+    int tentativas = 0;
+    bool venceu = false;  //Ainda não venceu
+
+    Console.WriteLine("ALERTA🚨🚨🚨 UM IMPIEDOSO VILÃO ESTA TENTANDO INVADIR O CASTELO. SEU TRABALHO COMO REI É PARAR " +
+        "ESTE ATAQUE COM SUAS TROPAS E DEFESAS!");
+
+    while (tentativas < 3 && !venceu)
+    {
+        for (int i = 1; i <= 1; i++) //Repetição
+        {
+            Console.Write("DIGA UM NUMERO PARA SUAS TROPAS!");
+            int forca = int.Parse(Console.ReadLine());
+
+            int resultado = forca * forca * forca;
+
+            Console.WriteLine("SEUS SOLDADOS ESTÃO DETERMINADOS, A FORÇA DE SUA DEFESA AUMENTA PARA: " + resultado);
+
+            if (resultado > 400)  //Se o resultado for maior que 400
+            {
+                venceu = true;
+
+                switch (1) //Escolhe se vence ou perde com base nas tentativas ja feitas
+                {
+                    case 1:
+                        Console.WriteLine("Você conseguiu defender seu reino!");
+                        break;  //Fecha o codigo
+                }
+            }
+            else //Se perder
+            {
+                tentativas++;
+
+                switch (tentativas)
+                {
+                    case 1:
+                        Console.WriteLine("Primeiro ataque falhou!");
+                        break;
+                    case 2:
+                        Console.WriteLine("Segundo ataque falhou!");
+                        break;
+                    case 3:
+                        Console.WriteLine("Você perdeu...");
+                        Console.WriteLine("Agora viverá servindo Luxos e sucumbindo aos desejos...");
+                        break;  //Fehca o codigo
+                }
+            }
+        }
+    }
+}
+
